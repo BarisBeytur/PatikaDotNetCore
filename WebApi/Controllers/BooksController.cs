@@ -35,7 +35,7 @@ namespace WebApi.AddControllers
         /// GetBooks method is created to get all books from the database.
         /// </summary>
         /// <returns></returns>
-        [HttpGet] // GET: api/books
+        [HttpGet]
         public IActionResult GetBooks()
         {
             GetBooksQuery query = new GetBooksQuery(_context, _mapper);
@@ -49,7 +49,7 @@ namespace WebApi.AddControllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet("{id}")] // GET: api/books/id
+        [HttpGet("{id}")]
         public IActionResult GetBookById(int id)
         {
             BookDetailViewModel result;
@@ -64,7 +64,7 @@ namespace WebApi.AddControllers
         /// </summary>
         /// <param name="newBook"></param>
         /// <returns></returns>
-        [HttpPost] // POST:api/books
+        [HttpPost]
         public IActionResult AddBook([FromBody] CreateBookModel newBook)
         {
             CreateBookCommand command = new CreateBookCommand(_context, _mapper);
@@ -79,7 +79,7 @@ namespace WebApi.AddControllers
         /// <param name="id"></param>
         /// <param name="updatedBook"></param>
         /// <returns></returns>
-        [HttpPut("{id}")] //PUT [FromBody] : api/books/id
+        [HttpPut("{id}")]
         public IActionResult UpdateBook(int id, [FromBody] UpdateBookModel updatedBook)
         {
             UpdateBookCommand command = new UpdateBookCommand(_context);
@@ -95,7 +95,7 @@ namespace WebApi.AddControllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpDelete("{id}")] //DELETE [FromBody] :: api/books/id
+        [HttpDelete("{id}")]
         public IActionResult DeleteBook(int id)
         {
             DeleteBookCommand command = new DeleteBookCommand(_context);
