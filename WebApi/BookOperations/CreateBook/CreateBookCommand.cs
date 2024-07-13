@@ -7,6 +7,9 @@ using WebApi.DbOperations;
 
 namespace WebApi.BookOperations.CreateBook
 {
+    /// <summary>
+    /// CreateBookCommand sýnýfý, CreateBookModel sýnýfý ve Handle metodu içerir.
+    /// </summary>
     public class CreateBookCommand
     {
         public CreateBookModel Model { get; set; }

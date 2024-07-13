@@ -8,6 +8,9 @@ using WebApi.DbOperations;
 
 namespace WebApi.BookOperations.GetBookDetail
 {
+    /// <summary>
+    /// GetBookDetailQuery sınıfı, kitap detaylarını getiren sınıftır.
+    /// </summary>
     public class GetBookDetailQuery
     {
         private readonly BookStoreDbContext _dbContext;

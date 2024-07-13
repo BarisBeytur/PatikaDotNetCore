@@ -7,6 +7,9 @@ using WebApi.DbOperations;
 
 namespace WebApi.BookOperations.UpdateBook
 {
+    /// <summary>
+    /// UpdateBookCommand sınıfı, kitap güncelleme işlemlerini gerçekleştirmek için kullanılır.
+    /// </summary>
     public class UpdateBookCommand
     {
         private readonly BookStoreDbContext _dbContext;

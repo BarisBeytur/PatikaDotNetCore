@@ -6,6 +6,9 @@ using WebApi.DbOperations;
 
 namespace WebApi.BookOperations.DeleteBook
 {
+    /// <summary>
+    /// DeleteBookCommand sınıfı, kitap silme işlemlerini gerçekleştirmek için kullanılır.
+    /// </summary>
     public class DeleteBookCommand
     {
         private readonly BookStoreDbContext _dbContext;
