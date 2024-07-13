@@ -11,6 +11,7 @@ using WebApi.BookOperations.DeleteBook;
 using WebApi.BookOperations.GetBookDetail;
 using WebApi.BookOperations.GetBooks;
 using WebApi.BookOperations.UpdateBook;
+using WebApi.Common.FluentValidation;
 using WebApi.DbOperations;
 using static WebApi.BookOperations.CreateBook.CreateBookCommand;
 
@@ -65,6 +66,7 @@ namespace WebApi.AddControllers
         /// <param name="newBook"></param>
         /// <returns></returns>
         [HttpPost]
+        [ServiceFilter(typeof(ValidationFilter))]
         public IActionResult AddBook([FromBody] CreateBookModel newBook)
         {
             CreateBookCommand command = new CreateBookCommand(_context, _mapper);
@@ -80,6 +82,7 @@ namespace WebApi.AddControllers
         /// <param name="updatedBook"></param>
         /// <returns></returns>
         [HttpPut("{id}")]
+        [ServiceFilter(typeof(ValidationFilter))]
         public IActionResult UpdateBook(int id, [FromBody] UpdateBookModel updatedBook)
         {
             UpdateBookCommand command = new UpdateBookCommand(_context);

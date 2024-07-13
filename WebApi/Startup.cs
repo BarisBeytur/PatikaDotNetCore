@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -14,6 +15,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using WebApi.Common.FluentValidation;
 using WebApi.DbOperations;
 using WebApi.Middlewares;
 using WebApi.Services;
@@ -34,7 +36,11 @@ namespace WebApi
         {
 
             services.AddControllers()
-            .AddNewtonsoftJson();
+            .AddNewtonsoftJson()
+            .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>());
+
+            services.AddScoped<ValidationFilter>();
+
 
             services.AddSwaggerGen(c =>
             {
