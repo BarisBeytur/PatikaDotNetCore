@@ -1,4 +1,3 @@
-# Anadolu'nun Yıldızları Param .Net Practicum Ödev 3 
 ## Restful Api
 ### BookStore
 #### Proje İçeriği
