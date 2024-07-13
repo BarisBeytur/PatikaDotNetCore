@@ -5,6 +5,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApi
 {
+    /// <summary>
+    /// Kitap tablosu
+    /// </summary>
     public class Book
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

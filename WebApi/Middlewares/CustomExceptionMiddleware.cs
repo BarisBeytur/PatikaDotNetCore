@@ -12,6 +12,9 @@ using WebApi.Services;
 
 namespace WebApi.Middlewares
 {
+    /// <summary>
+    /// Custom Exception Middleware hata yönetimi için kullanýlýr.
+    /// </summary>
     public class CustomExceptionMiddleware
     {
         private readonly RequestDelegate _next;
@@ -45,6 +48,13 @@ namespace WebApi.Middlewares
             
         }
 
+        /// <summary>
+        /// HandleExcepiton metodu hata durumunda loglama yapar ve hata mesajýný döner.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="ex"></param>
+        /// <param name="watch"></param>
+        /// <returns></returns>
         private Task HandleExcepiton(HttpContext context, Exception ex, Stopwatch watch)
         {
             context.Response.ContentType="application/json";
@@ -56,6 +66,10 @@ namespace WebApi.Middlewares
         }
     }
 
+
+    /// <summary>
+    /// CustomExceptionMiddlewareExtension sýnýfý Middleware sýnýfýný kullanmak için gerekli extension metodu saðlar.
+    /// </summary>
     public static class CustomExceptionMiddlewareExtension
     {
         public static IApplicationBuilder UseCustomExceptionMiddle(this IApplicationBuilder builder)

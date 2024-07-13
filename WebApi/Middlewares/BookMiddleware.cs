@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Http;
 
 namespace WebApi.Middlewares
 {
+    /// <summary>
+    /// BookMiddleware sýnýfý RequestDelegate türünden bir parametre alýr ve Invoke metodu ile middleware iþlemlerini gerçekleþtirir.
+    /// </summary>
     public class BookMiddleware
     {
         private readonly RequestDelegate _next;
@@ -21,6 +24,10 @@ namespace WebApi.Middlewares
             Console.WriteLine("Bye World!");
         }
     }
+
+    /// <summary>
+    /// BookMiddlewareEntension sýnýfý IApplicationBuilder türünden bir parametre alýr ve UseBook metodu ile BookMiddleware sýnýfýný kullanýr.
+    /// </summary>
     static public class BookMiddlewareEntension
     {
         public static IApplicationBuilder UseBook(this IApplicationBuilder builder)
